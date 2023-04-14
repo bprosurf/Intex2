@@ -91,7 +91,7 @@ body {
 }
 
 .container2 {
-
+    background-color:antiquewhite;
     width: 100%;
     max-width: 1400px; /* set a maximum width for the container */
     margin: auto; /* shorthand for setting top/bottom margin to 0 and left/right margin to auto */
@@ -106,4 +106,13 @@ body {
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+table.bold-lines {
+    border-collapse: collapse;
+    background-color: white;
+}
+
+table.bold-lines td, table.bold-lines th {
+    border: 1px solid black;
 }

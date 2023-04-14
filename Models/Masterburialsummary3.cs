@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -10,6 +11,7 @@ namespace Auth1.Models
     public partial class Masterburialsummary3
     {
         public long? id { get; set; }
+        [Required(ErrorMessage = "Must Enter Burial ID")]
         public string? burialid { get; set; }
         public string sex { get; set; }
         public string ageatdeath { get; set; }

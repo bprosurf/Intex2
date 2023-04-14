@@ -57,12 +57,6 @@ namespace Auth1
             services.AddRazorPages();
             services.AddScoped<IMummyRepository, EFMummyRepository>();
 
-            services.AddAuthentication().AddFacebook(facebookOptions =>
-            {
-                facebookOptions.AppId = Configuration["Authentication__Facebook__AppId"];
-                facebookOptions.AppSecret = Configuration["Authentication__Facebook__AppSecret"];
-            });
-
             services.AddHsts(options =>
             {
                 options.IncludeSubDomains = true;

@@ -6,51 +6,96 @@
 
 @model Masterburialsummary3
 
-<div>
+
+<div class="container mt-5">
+    <h1>Add a New Mummy</h1>
     <form method="post">
         <div asp-validation-summary="All"></div>
         <input type="hidden" asp-for="id" value="@ViewBag.NewId" />
 
-        <label asp-for="burialid"><b>Burial ID</b> (combination of <b>SquareNorthSouth, NorthSouth, SquareEastWest, EastWest, Area, and BurialNumber</b>):</label>
-        <input asp-for="burialid" />
-        <p>(Example: 130N20WNW01  --  Don't include spaces)</p>
+        <div class="form-group row">
+            <label asp-for="burialid" class="col-sm-3 col-form-label"><b>Burial ID (combination of SquareNorthSouth, NorthSouth, SquareEastWest, EastWest, Area, and BurialNumber):</b></label>
+            <div class="col-sm-9">
+                <input asp-for="burialid" class="form-control" placeholder="Example: 130N20WNW01 (Don't include spaces)">
+            </div>
+        </div>
 
-        <label asp-for="sex"><b>Sex:</b></label>
-        <select asp-for="sex">
-            <option value="">Unknown</option>
-            <option value="M">Male</option>
-            <option value="F">Female</option>
-        </select><br />
+        <div class="form-group row">
+            <label asp-for="sex" class="col-sm-3 col-form-label"><b>Sex:</b></label>
+            <div class="col-sm-9">
+                <select asp-for="sex" class="form-control">
+                    <option value="">Unknown</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+        </div>
 
-        <label asp-for="area"><b>Area:</b></label>
-        <input asp-for="area" /><br />
+        <div class="form-group row">
+            <label asp-for="area" class="col-sm-3 col-form-label"><b>Area:</b></label>
+            <div class="col-sm-9">
+                <input asp-for="area" class="form-control">
+            </div>
+        </div>
 
-        <label asp-for="ageatdeath"><b>Age at Death:</b></label>
-        <input asp-for="ageatdeath" /><br />
+        <div class="form-group row">
+            <label asp-for="ageatdeath" class="col-sm-3 col-form-label"><b>Age at Death:</b></label>
+            <div class="col-sm-9">
+                <input asp-for="ageatdeath" class="form-control">
+            </div>
+        </div>
 
-        <label asp-for="headdirection"><b>Head Direction:</b></label>
-        <input asp-for="headdirection" /><br />
+        <div class="form-group row">
+            <label asp-for="headdirection" class="col-sm-3 col-form-label"><b>Head Direction:</b></label>
+            <div class="col-sm-9">
+                <input asp-for="headdirection" class="form-control">
+            </div>
+        </div>
 
-        <label asp-for="haircolor"><b>Hair Color:</b></label>
-        <input asp-for="haircolor" /><br />
+        <div class="form-group row">
+            <label asp-for="haircolor" class="col-sm-3 col-form-label"><b>Hair Color:</b></label>
+            <div class="col-sm-9">
+                <input asp-for="haircolor" class="form-control">
+            </div>
+        </div>
 
-        <label asp-for="depth"><b>Burial Depth:</b></label>
-        <input asp-for="depth" /><br />
+        <div class="form-group row">
+            <label asp-for="depth" class="col-sm-3 col-form-label"><b>Burial Depth:</b></label>
+            <div class="col-sm-9">
+                <input asp-for="depth" class="form-control">
+            </div>
+        </div>
 
-        <label asp-for="color"><b>Textile Color:</b></label>
-        <input asp-for="color" /><br />
-
-        <label asp-for="structure"><b>Textile Structure:</b></label>
-        <input asp-for="structure" /><br />
-
-        <label asp-for="textilefunction"><b>Textile Function:</b></label>
-        <input asp-for="textilefunction" /><br />
-
-        <label asp-for="estimatestature"><b>Estimate Stature:</b></label>
-        <input asp-for="estimatestature" /><br />
-
-        <label asp-for="femur"><b>Femur:</b></label>
-        <input asp-for="femur" /><br />
+        <div class="form-group row">
+            <label asp-for="color" class="col-sm-3 col-form-label"><b>Textile Color:</b></label>
+            <div class="col-sm-9">
+                <input asp-for="color" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="structure" class="col-sm-3 col-form-label"><b>Textile Structure:</b></label>
+            <div class="col-sm-9">
+                <input asp-for="structure" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="textilefunction" class="col-sm-3 col-form-label"><b>Textile Function:</b></label>
+            <div class="col-sm-9">
+                <input asp-for="textilefunction" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="estimatestature" class="col-sm-3 col-form-label"><b>Estimate Stature:</b></label>
+            <div class="col-sm-9">
+                <input asp-for="estimatestature" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="femur" class="col-sm-3 col-form-label"><b>Femur:</b></label>
+            <div class="col-sm-9">
+                <input asp-for="femur" class="form-control">
+            </div>
+        </div>
 
         <br />
 
