@@ -1,0 +1,221 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>This is where you can predict head direction given a few pieces of information</h2>
+<br />
+<br />
+<form>
+    <label>Depth:</label>
+    <input type="number" id="depth" value="" />
+    <br />
+    <label>Sex:</label>
+    <select id="sex">
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+        <option value="U">Unknown</option>
+    </select>
+    <br />
+    <label>Face Bundles:</label>
+    <select id="face_bundles">
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+    </select>
+    <br />
+    <label>Goods:</label>
+    <select id="goods">
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+    </select>
+    <br />
+    <label>Wrapping:</label>
+    <select id="wrapping">
+        <option value="W">Complete</option>
+        <option value="N">Half There</option>
+        <option value="B">Just Bones</option>
+        <option value="U">Unknown</option>
+    </select>
+    <br />
+    <label>Hair Color:</label>
+    <select id="hair_color">
+        <option value="A">Brown-Red</option>
+        <option value="B">Brown/Dark Brown/Lt Brown</option>
+        <option value="D">Blond</option>
+        <option value="K">Black</option>
+        <option value="R">Red/Red-Bl</option>
+        <option value="U">Unknown</option>
+    </select>
+    <br />
+    <label>Age At Death:</label>
+    <select id="age_at_death">
+        <option value="A">Adult (15+)</option>
+        <option value="C">Child (3-15)</option>
+        <option value="I">Infant (1-3)</option>
+        <option value="N">Newborn (0-1)</option>
+        <option value="U">Unknown</option>
+    </select>
+
+    <br />
+
+    <button id="custom-button">Predict</button>
+</form>
+
+<br />
+<br />
+
+<h3>Prediction:</h3>
+<h4 id="predictionResult"></h4>
+<script>
+    const customButton = document.getElementById('custom-button');
+    customButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        const Data = {
+            "depth": 0,
+            "sex_F": 0,
+            "sex_M": 0,
+            "sex_U": 0,
+            "facebundles_Y": 0,
+            "facebundles_N": 0,
+            "goods_Y": 0,
+            "goods_N": 0,
+            "wrapping_W": 0,
+            "wrapping_N": 0,
+            "wrapping_B": 0,
+            "wrapping_U": 0,
+            "haircolor_A": 0,
+            "haircolor_B": 0,
+            "haircolor_D": 0,
+            "haircolor_K": 0,
+            "haircolor_U": 0,
+            "ageatdeath_A": 0,
+            "ageatdeath_C": 0,
+            "ageatdeath_I": 0,
+            "ageatdeath_IN": 0,
+            "ageatdeath_N": 0,
+            "ageatdeath_U": 0,
+
+        }
+
+        function predict() {
+
+            var depth = document.getElementById("depth").value;
+            var sex = document.getElementById("sex").value;
+            var face_bundles = document.getElementById("face_bundles").value;
+            var goods = document.getElementById("goods").value;
+            var wrapping = document.getElementById("wrapping").value;
+            var hair_color = document.getElementById("hair_color").value;
+            var age_at_death = document.getElementById("age_at_death").value;
+            Data.depth = parseFloat(depth);
+
+
+
+            if (sex == "M") {
+                Data.sex_M = 1;
+            }
+            if (sex == "F") {
+                Data.sex_F = 1;
+            }
+            if (sex == "U") {
+                Data.sex_U = 1;
+            }
+            if (facebundles == "Y") {
+                Data.facebundles_Y = 1;
+            }
+            if (facebundles == "N") {
+                Data.facebundles_N = 1;
+            }
+            if (goods == "Y") {
+                Data.goods_Y = 1;
+            }
+            if (goods == "N") {
+                Data.goods_N = 1;
+            }
+            if (wrapping == "W") {
+                Data.wrapping_W = 1;
+            }
+            if (wrapping == "N") {
+                Data.wrapping_N = 1;
+            }
+            if (wrapping == "B") {
+                Data.wrapping_B = 1;
+            }
+            if (wrapping == "U") {
+                Data.wrapping_U = 1;
+            }
+            if (haircolor == "A") {
+                Data.haircolor_A = 1;
+            }
+            if (haircolor == "B") {
+                Data.haircolor_B = 1;
+            }
+            if (haircolor == "D") {
+                Data.haircolor_D = 1;
+            }
+            if (haircolor == "K") {
+                Data.haircolor_K = 1;
+            }
+            if (haircolor == "U") {
+                Data.haircolor_U = 1;
+            }
+            if (ageatdeath == "A") {
+                Data.ageatdeath_A = 1;
+            }
+            if (ageatdeath == "C") {
+                Data.ageatdeath_C = 1;
+            }
+            if (ageatdeath == "I") {
+                Data.ageatdeath_I = 1;
+            }
+            if (ageatdeath == "N") {
+                Data.ageatdeath_N = 1;
+            }
+            if (ageatdeath == "U") {
+                Data.ageatdeath_U = 1;
+            }
+
+            //Data.sex_F = parseFloat(sex_F.value);
+            //Data.sex_M = parseFloat(sex_M.value);
+            //Data.sex_U = parseFloat(sex_U.value);
+            //Data.facebundles_Y = parseFloat(facebundles_Y.value);
+            //Data.facebundles_N = parseFloat(facebundles_N.value);
+            //Data.goods_Y = parseFloat(goods_Y.value);
+            //Data.goods_N = parseFloat(goods_N.value);
+            //Data.wrapping_W = parseFloat(wrapping_W.value);
+            //Data.wrapping_N = parseFloat(wrapping_N.value);
+            //Data.wrapping_B = parseFloat(wrapping_B.value);
+            //Data.wrapping_U = parseFloat(wrapping_U.value);
+            //Data.haircolor_A = parseFloat(haircolor_A.value);
+            //Data.haircolor_B = parseFloat(haircolor_B.value);
+            //Data.haircolor_D = parseFloat(haircolor_D.value);
+            //Data.haircolor_K = parseFloat(haircolor_K.value);
+            //Data.haircolor_U = parseFloat(haircolor_U.value);
+            //Data.ageatdeath_A = parseFloat(ageatdeath_A.value);
+            //Data.ageatdeath_C = parseFloat(ageatdeath_C.value);
+            //Data.ageatdeath_I = parseFloat(ageatdeath_I.value);
+            //Data.ageatdeath_N = parseFloat(ageatdeath_N.value);
+            //Data.ageatdeath_U = parseFloat(ageatdeath_U.value);
+            alert(prediction);
+        }
+        fetch('/score', {
+            method: 'POST',
+            body: JSON.stringify(Data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(prediction => {
+                console.log(prediction);
+                // Update the h4 tag with the prediction result
+                document.querySelector('#predictionResult').textContent = String("Predicted head direction: " + prediction.predictedValue);
+                console.log("it got here at least");
+            })
+            .catch(error => {
+                alert("Something went wrong...");
+            });
+    })
+</script>
+<!-- result -->
+<!-- result -->
